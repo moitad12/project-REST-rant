@@ -5,6 +5,11 @@ const router = require('./controllers/places')
 
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
+
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
 
 app.use('/places', router)
 
