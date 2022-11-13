@@ -1,7 +1,16 @@
 const express = require('express')
-// const app = express()
 require('dotenv').config()
 const router = express.Router()
+
+router.get('/new', (req, res) => {
+  res.render('places/new')
+})
+
+router.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('POST /places')
+})
+
 
 // GET /places
 router.get('/', (req, res) => {
@@ -10,13 +19,13 @@ router.get('/', (req, res) => {
         city: 'Seattle',
         state: 'WA',
         cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/250/250'
+        pic: '/images/thai_food.jpg'
       }, {
         name: 'Coding Cat Cafe',
         city: 'Phoenix',
         state: 'AZ',
         cuisines: 'Coffee, Bakery',
-        pic: 'http://placekitten.com/250/250'
+        pic: '/images/cafe.jpg'
       }]
       
     res.render('places/index', {places})
