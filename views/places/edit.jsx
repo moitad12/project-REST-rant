@@ -14,7 +14,7 @@ function edit_form (data) {
                   className="form-control"
                   id="name"
                   name="name"
-                  value={data.place.name}
+                  defaultValue={data.place.name}
                   required
                 />
               </div>
@@ -25,22 +25,26 @@ function edit_form (data) {
                   type="url"
                   id="pic"
                   name="pic"
-                  value={data.place.pic}
+                  defaultValue={data.place.pic}
                 />
               </div>
               <div className="form-group col-sm-6">
                 <label htmlFor="name">City</label>
-                <input className="form-control" 
-                id="city" 
-                name="city"
-                value={data.place.city} />
+                <input
+                  className="form-control"
+                  id="city"
+                  name="city"
+                  defaultValue={data.place.city}
+                />
               </div>
               <div className="form-group col-sm-6">
                 <label htmlFor="name">State</label>
-                <input className="form-control" 
-                id="state" 
-                name="state"
-                value={data.place.state} />
+                <input
+                  className="form-control"
+                  id="state"
+                  name="state"
+                  defaultValue={data.place.state}
+                />
               </div>
               <div className="form-group col-sm-6">
                 <label htmlFor="name">Cuisines</label>
@@ -48,15 +52,20 @@ function edit_form (data) {
                   className="form-control"
                   id="cuisines"
                   name="cuisines"
-                  value={data.place.cuisines}
+                  defaultValue={data.place.cuisines}
                   required
                 />
               </div>
-              <input
-                className="btn btn-primary"
-                type="submit"
-                value="Add Place"
-              />
+              <div className="form-group col-sm-4">
+                <label htmlFor="founded">Founded</label>
+                <input
+                  className="form-control"
+                  id="founded"
+                  name="founded"
+                  value={data.place.founded}
+                />
+              </div>
+              <input className="btn btn-primary" type="submit" value="Update Place" />
             </div>
           </form>
         </main>
